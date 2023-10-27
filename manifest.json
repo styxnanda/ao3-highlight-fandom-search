@@ -1,0 +1,30 @@
+{
+	"manifest_version": 3,
+	"name": "Fandom Highlighter",
+	"version": "1.0",
+	"description": "Highlights fandoms with user-defined counts.",
+	"permissions": ["activeTab", "storage", "scripting", "activeTab"],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://archiveofourown.org/media/*"],
+			"js": ["content.js"],
+			"css": ["styles.css"]
+		}
+	],
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "src/AO3 Work Count Extension.png",
+			"48": "src/AO3 Work Count Extension.png",
+			"128": "src/AO3 Work Count Extension.png"
+		}
+	},
+	"icons": {
+		"16": "src/AO3 Work Count Extension.png",
+		"48": "src/AO3 Work Count Extension.png",
+		"128": "src/AO3 Work Count Extension.png"
+	}
+}
